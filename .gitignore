@@ -1,0 +1,8 @@
+.vscode
+
+repos-watcher
+repos
+debug
+
+config.json
+*.log

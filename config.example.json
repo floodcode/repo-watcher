@@ -1,0 +1,6 @@
+{
+    "reposRoot": "repos/",
+    "watchPath": "resources/",
+    "watchRegexp": "^.+\\.js$",
+    "execute": "./bin/minify-script"
+}
