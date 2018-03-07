@@ -185,7 +185,7 @@ func addRepo(path string) {
 
 	reposMutex.Lock()
 	if _, ok := currentlyWatching[cleanPath]; !ok {
-		log(logInfo, "[RepoWatch] Adding repo:"+cleanPath)
+		log(logInfo, "[RepoWatch] Adding repo: "+cleanPath)
 
 		watcher.Add(targetPath)
 		currentlyWatching[cleanPath] = true
