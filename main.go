@@ -93,7 +93,10 @@ func watchRepos(reposRoot string) {
 	}()
 
 	err = reposWatcher.Add(reposRoot)
-	checkError(err)
+	if err != nil {
+		log(logError, err.Error())
+		return
+	}
 
 	done := make(chan bool)
 	go func() {
@@ -149,7 +152,10 @@ func processEvent(event fsnotify.Event) {
 	cmd.Dir = repoPath
 
 	output, err := cmd.Output()
-	checkError(err)
+	if err != nil {
+		log(logError, err.Error())
+		return
+	}
 
 	log(logInfo, string(output))
 }
